@@ -1,0 +1,19 @@
+---
+include:
+  - initial_stuff.yml
+---
+mandatory: True
+code: |
+  client.name.first
+  defendant.name.first
+  plaintiff_1.name.first
+  plaintiff_2.name.first
+  hereby_action
+  given_action
+  cost_action
+  served_1
+  served_2
+ 
+---
+include:
+  - questions_FORM148.yml

@@ -1,0 +1,86 @@
+---
+modules:
+  - docassemble.base.legal
+  - docassemble.base.util
+---
+metadata:
+  title: |
+    FORM 148 - ORDER TO STAY PROCEEDINGS
+  short title: |
+    FORM 148
+  description: |
+    A order to stay proceedings interview
+  authors:
+    - name: Adeola Abiola
+      organization: Authority wit.
+  revision_date: 2021-07-23
+---
+objects:
+  - client: Individual
+  - defendant: Individual
+  - plaintiff_1: Individual
+  - plaintiff_2: Individual
+---
+question: |
+  The above action is been commenced against.
+fields:
+  - First Name: client.name.first
+  - Last Name: client.name.last
+
+---
+
+question: |
+  Name of who filled the undertaking.
+fields:
+  - First Name: defendant.name.first
+  - Last Name: defendant.name.last
+---
+question: |
+  Bond so far as his liability to the plaintiffs 
+fields:
+  - First Name: plaintiff_1.name.first
+  - Last Name: plaintiff_1.name.last
+  - First Name: plaintiff_2.name.first
+  - Last Name: plaintiff_2.name.last
+---
+question: |
+  The court hereby order the action be stayed.
+fields:
+  - Action: hereby_action
+    datatype: area
+---
+question: |
+  The court hereby order the action to be given.
+fields:
+  - Action: given_action
+    datatype: area
+---
+question: |
+  What the is cost of action.
+fields:
+  - Action: cost_action
+    datatype: area
+---
+question: |
+  This order shall be served on .
+fields:
+  - Date: served_1 
+    datatype: date
+  - Date: served_2
+    datatype: date
+---
+  
+  
+mandatory: True
+question: |
+  Here is your document.
+subquestion: |
+  Does it meet your approval?
+yesno: user_approves
+attachment:
+  name: Your letter
+  filename: letter
+  docx template file: form148.docx
+  valid formats:
+    - pdf
+    - docx
